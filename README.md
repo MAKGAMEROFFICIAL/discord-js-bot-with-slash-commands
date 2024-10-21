@@ -50,7 +50,8 @@ A feature-rich Discord bot created by M.A.K GAMER to supercharge your server wit
 - 🏠 `serverinfo` - Info about the server.
 - 🕵️️ `snipe` - Retrieve the last deleted message.
 - 📝 `userinfo` - Details about a user.
-
+### DEVELOPER COMMANDS
+- `reload` - reload any command
 ## Installation
 
 1. **Clone the repository:**```bash
