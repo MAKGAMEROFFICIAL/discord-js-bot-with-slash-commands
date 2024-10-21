@@ -1,6 +1,5 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const { giphy_api_key } = require('../../../config.js');
-
 module.exports = {
 category: 'fun',
 data: new SlashCommandBuilder()
