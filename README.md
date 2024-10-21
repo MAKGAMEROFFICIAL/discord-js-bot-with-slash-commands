@@ -54,10 +54,11 @@ A feature-rich Discord bot created by M.A.K GAMER to supercharge your server wit
 - `reload` - reload any command
 ## Installation
 
-1. **Clone the repository:**```bash
+1. **Clone the repository:**
+```bash
    git clone https://github.com/makgamerofficial/discord-js-bot-with-slash-commands.git
    cd discord-js-bot-with-slash-commands
-   ```
+```
 
 2. **Install dependencies:**
    ```bash
