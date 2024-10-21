@@ -6,7 +6,7 @@ A feature-rich Discord bot created by M.A.K GAMER to supercharge your server wit
 ### - fun commands using giphy api
 ### - chatbot 
 ## chatbot 
-`chatbot` command activates chatbot feature in channel where command is rn using Gemini api. (resets on restart)
+`chatbot` command activates chatbot feature in channel where command is uses. and bot chats there with users using Gemini api. (resets on restart)
 ### Fun Commands 🎉
 - 🌟 `hug` - Send a virtual hug.
 - 💋 `kiss` - Blow a kiss.
