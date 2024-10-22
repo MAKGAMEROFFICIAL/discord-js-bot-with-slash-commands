@@ -86,5 +86,5 @@ A feature-rich Discord bot created by M.A.K GAMER to supercharge your server wit
    ```bash
    node deploy-commands.js
    ```
-
+5 - get gemini api key from [google ai studio](https://aistudio.google.com/) and giphy api key from [giphy dashboard](https://developers.giphy.com/dashboard/).
 ---
