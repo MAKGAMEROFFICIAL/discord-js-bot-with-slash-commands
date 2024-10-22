@@ -9,7 +9,7 @@
     "better-sqlite3": "^9.3.0",
     "config.json": "^0.0.4",
     "discord.js": "^14.16.2",
-    "dns": "^0.1.2",
+    "dns": "^0.2.2",
     "doc": "^0.0.3",
     "dotenv": "^16.4.5",
     "mangodb": "^1.0.0",
