@@ -3,63 +3,65 @@
 A feature-rich Discord bot created by M.A.K GAMER to supercharge your server with fun, information, management, moderation, and utility commands. Enhance your Discord experience effortlessly!
 
 ## Features
-### - fun commands using giphy api
-### - chatbot 
-## chatbot 
-`chatbot` command activates chatbot feature in channel where command is uses. and bot chats there with users using Gemini api. (resets on restart)
+### Fun Commands Using GIPHY API
+### Chatbot
+The `chatbot` command activates the chatbot feature in the channel where it is used. The bot engages with users using the Gemini API and resets upon restart.
+
 ### Fun Commands 🎉
 - 🌟 `hug` - Send a virtual hug.
 - 💋 `kiss` - Blow a kiss.
 - 🤗 `pat` - Pat someone's head.
-- 👊 `punch` - Light-hearted punch.
+- 👊 `punch` - Give a light-hearted punch.
 - 🫡 `salute` - Show some respect.
-- 🖐️ `slap` - Playful slap.
-- 👋 `wave` - Friendly wave.
+- 🖐️ `slap` - Deliver a playful slap.
+- 👋 `wave` - Wave hello.
 
 ### Information Commands 📚
-- 🤖 `botinfo` - Get deets on the bot.
-- ❓ `help` - Show all commands available.
-- 📶 `ping` - Check the bot's ping.
-- ⏳ `uptime` - See how long the bot's been kickin'.
+- 🤖 `botinfo` - Get details about the bot.
+- ❓ `help` - Display all available commands.
+- 📶 `ping` - Check the bot's response time.
+- ⏳ `uptime` - See how long the bot has been running.
 
 ### Management Commands 🛠️
-- 🚫 `hide` - Conceal a channel.
+- 🚫 `hide` - Conceal a specific channel.
 - 🕵️ `hideall` - Conceal all channels.
 - 🔒 `lock` - Lock a channel.
-- 🔒🔒 `lockall` - Lock every channel.
-- 👀 `unhide` - Reveal a hidden channel.
-- 👀👀 `unhideall` - Reveal all hidden channels.
+- 🔒 `lockall` - Lock all channels.
+- 👀 `unhide` - Reveal a concealed channel.
+- 👀 `unhideall` - Reveal all concealed channels.
 - 🔓 `unlock` - Unlock a channel.
-- 🔓🔓 `unlockall` - Unlock all channels.
+- 🔓 `unlockall` - Unlock all channels.
 
 ### Moderation Commands ⚖️
-- ➕ `roleadd` - Grant a role.
-- ➖ `roleremove` - Revoke a role.
-- 🚷 `ban` - Ban a user.
-- 🦵 `kick` - Kick a user.
+- ➕ `roleadd` - Assign a role to a user.
+- ➖ `roleremove` - Remove a role from a user.
+- 🚷 `ban` - Ban a user from the server.
+- 🦵 `kick` - Kick a user from the server.
 - 🔇 `mute` - Mute a member.
 - 📛 `nickname` - Change a member's nickname.
-- 🧹 `purge` - Delete bulk messages.
+- 🧹 `purge` - Delete multiple messages.
 - 🆔 `resetnick` - Reset a member's nickname.
-- ⚖️ `unban` - Unban a member.
+- ⚖️ `unban` - Unban a user.
 - 🔊 `unmute` - Unmute a member.
 
 ### Utility Commands 🛠️
-- 👤 `avatar` - Get a user's avatar.
+- 👤 `avatar` - Retrieve a user's avatar.
 - 🏳️ `banner` - Get a user's banner.
-- 🗨️ `chatbot` - Chat with the bot.
-- 🏠 `serverinfo` - Info about the server.
+- 🗨️ `chatbot` - Interact with the bot.
+- 🏠 `serverinfo` - Get information about the server.
 - 🕵️️ `snipe` - Retrieve the last deleted message.
-- 📝 `userinfo` - Details about a user.
-### DEVELOPER COMMANDS
-- `reload` - reload any command
+- 📝 `userinfo` - Get details about a user.
+
+### Developer Commands
+- `reload` - Reload any command.
+
 ## Installation
 
 1. **Clone the repository:**
-```bash
+   ```bash
    git clone https://github.com/makgamerofficial/discord-js-bot-with-slash-commands.git
    cd discord-js-bot-with-slash-commands
-```
+   ```
 
 2. **Install dependencies:**
    ```bash
@@ -86,5 +88,7 @@ A feature-rich Discord bot created by M.A.K GAMER to supercharge your server wit
    ```bash
    node deploy-commands.js
    ```
-5 - get gemini api key from [google ai studio](https://aistudio.google.com/) and giphy api key from [giphy dashboard](https://developers.giphy.com/dashboard/).
+
+5. Get the Gemini API key from [Google AI Studio](https://aistudio.google.com/) and the Giphy API key from the [Giphy Dashboard](https://developers.giphy.com/dashboard/). 
+
 ---
