@@ -1,19 +1,19 @@
-# Contributing to [Your Project Name]
+# Contributing to Slasher
 
 First off, thanks for taking the time to contribute! 🎉
 
-## How to contribute
+## How to Contribute
 
-### 1. Fork the repository
+### 1. Fork the Repository
 
 Fork the repository on GitHub and clone your fork locally.
 
 ```bash
-git clone https://github.com/yourusername/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/MAKGAMEROFFICIAL/discord-js-bot-with-slash-commands.git
+cd discord-js-bot-with-slash-commands
 ```
 
-### 2. Create a branch
+### 2. Create a Branch
 
 Create a new branch for your changes.
 
@@ -21,20 +21,20 @@ Create a new branch for your changes.
 git checkout -b feature/your-feature-name
 ```
 
-### 3. Make changes
+### 3. Make Changes
 
-Make your changes, ensuring you follow the project's coding standards. 
+Make your changes, ensuring you follow the project's coding standards.
 
-- Lint your code:
-  ```bash
-  npm run lint
-  ```
-- Format your code:
-  ```bash
-  npm run format
-  ```
+- **Lint your code:**
+```bash
+npm run lint
+```
+- **Format your code:**
+```bash
+npm run format
+```
 
-### 4. Commit and push
+### 4. Commit and Push
 
 Commit your changes with a descriptive commit message.
 
@@ -43,7 +43,7 @@ git commit -m "Add feature XYZ"
 git push origin feature/your-feature-name
 ```
 
-### 5. Open a pull request
+### 5. Open a Pull Request
 
 Create a pull request on GitHub, describing your changes and linking to any relevant issues.
 
@@ -61,4 +61,4 @@ We welcome feature requests! If you have an idea that will improve the project, 
 
 ## Thank You!
 
-Your contributions make this project better. Thank you for being a part of it
+Your contributions make this project better. Thank you for being a part of it! 🚀
