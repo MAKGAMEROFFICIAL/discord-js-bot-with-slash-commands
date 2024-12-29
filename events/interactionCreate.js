@@ -1,77 +1,84 @@
 const { Events, Collection } = require("discord.js");
-
 module.exports = {
   name: Events.InteractionCreate,
   async execute(interaction) {
     // Slash Command Handling
     if (interaction.isChatInputCommand()) {
-      const command = interaction.client.commands.get(interaction.commandName);
+      const command = interaction.client.slashCommands.get(interaction.commandName);
 
       if (!command) {
-        console.error(`[x] No command matching ${interaction.commandName} was found.`);
-        return;
+        console.error(`[x] No slash command matching ${interaction.commandName} was found.`);
+        return await interaction.reply({ content: "That command couldn't be found.", ephemeral: true });
       }
 
       try {
         await command.execute(interaction);
+        await handleCooldown(interaction, command);
       } catch (error) {
-        console.error(error);
-        // Prevent multiple replies or follow-ups
-        if (interaction.replied || interaction.deferred) {
-          await interaction.followUp({
-            content: "[!] There was an error while executing this command!",
-            ephemeral: true,
-          });
-        } else {
-          await interaction.reply({
-            content: "[!] There was an error while executing this command!",
-            ephemeral: true,
-          });
-        }
+        console.error(`Error executing slash command ${interaction.commandName}:`, error);
+        await handleCommandError(interaction, error);
       }
-
-      // Call the cooldown handler after ensuring only one reply
-      await handleCooldown(interaction, command);
     }
   },
 };
 
 // Prefix Command Handling
-module.exports.messageHandler = async (message) => {
-  const prefix = "!"; // Set your desired prefix
-  if (!message.content.startsWith(prefix) || message.author.bot) return;
+module.exports.messageHandler = async (message, client) => {
+  const { prefix } = require('../functions/prefix');
+  if (!message.content.startsWith(prefix) || message.author.bot || !message.guild) return;
 
   const args = message.content.slice(prefix.length).trim().split(/ +/);
   const commandName = args.shift().toLowerCase();
-  const command = message.client.commands.get(commandName);
+  const command = client.prefixCommands.get(commandName) || client.prefixCommands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
 
   if (!command) {
-    console.error(`[x] No command matching ${commandName} was found.`);
+    console.error(`[x] No prefix command matching ${commandName} was found.`);
     return;
   }
 
   try {
-    await command.execute(message, args);
+    await command.execute(message, args, client);
+    await handleCooldown(message, command);
   } catch (error) {
-    console.error(error);
-    message.reply("[!] There was an error while executing this command!");
+    console.error(`Error executing prefix command ${commandName}:`, error);
+    await message.reply("[!] There was an error while executing this command!");
   }
-
-  // Call the cooldown handler
-  await handleCooldown(message, command);
 };
+
+// Utility function for handling errors in commands
+async function handleCommandError(interaction, error) {
+  const errorMessage = "[!] There was an error while executing this command!";
+  try {
+    if (interaction.replied || interaction.deferred) {
+      await interaction.followUp({
+        content: errorMessage,
+        ephemeral: true,
+      });
+    } else {
+      await interaction.reply({
+        content: errorMessage,
+        ephemeral: true,
+      });
+    }
+  } catch (replyError) {
+    console.error(`Error sending error message for ${interaction.commandName}:`, replyError);
+  }
+}
 
 // Cooldown Logic
 async function handleCooldown(source, command) {
   const { client, user } = source;
   const { cooldowns } = client;
 
-  if (!cooldowns.has(command.name)) {
-    cooldowns.set(command.name, new Collection());
+  // Determine the command name based on whether it's a slash or prefix command
+  const commandName = command.data ? command.data.name : command.name;
+
+  if (!cooldowns.has(commandName)) {
+    cooldowns.set(commandName, new Collection());
   }
 
   const now = Date.now();
-  const timestamps = cooldowns.get(command.name);
+  const timestamps = cooldowns.get(commandName);
   const defaultCooldownDuration = 3; // default cooldown in seconds
   const cooldownAmount = (command.cooldown ?? defaultCooldownDuration) * 1000;
 
@@ -80,20 +87,21 @@ async function handleCooldown(source, command) {
     if (now < expirationTime) {
       const expiredTimestamp = Math.round(expirationTime / 1000);
 
-      // Check if it's a Chat Input Command or a message command
-      if (!source.replied && !source.deferred) {
+      try {
         if (source.isChatInputCommand && typeof source.isChatInputCommand === "function") {
-          // Chat input command (slash command)
+          // Slash command
           await source.reply({
-            content: `Please wait, you are on a cooldown for \`${command.name}\`. You can use it again <t:${expiredTimestamp}:R>.`,
+            content: `Please wait, you are on a cooldown for \`${commandName}\`. You can use it again <t:${expiredTimestamp}:R>.`,
             ephemeral: true,
           });
         } else {
-          // Prefix command (message command)
+          // Prefix command
           await source.channel.send({
-            content: `Please wait, you are on a cooldown for \`${command.name}\`. You can use it again <t:${expiredTimestamp}:R>.`,
+            content: `Please wait, you are on a cooldown for \`${commandName}\`. You can use it again <t:${expiredTimestamp}:R>.`,
           });
         }
+      } catch (replyError) {
+        console.error(`Error applying cooldown for ${commandName} to ${user.tag}:`, replyError);
       }
 
       return;
