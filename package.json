@@ -4,24 +4,15 @@
   "description": "multipurpose discord bot with advanced slash commands",
   "version": "1.0.0-beta",
   "dependencies": {
-    "@discordjs/builders": "^1.9.0",
-    "@google/generative-ai": "^0.21.0",
-    "better-sqlite3": "^9.3.0",
-    "config.json": "^0.0.4",
-    "discord.js": "^14.16.3",
-    "dns": "^0.2.2",
-    "doc": "^0.0.3",
-    "dotenv": "^16.4.5",
-    "mangodb": "^1.0.0",
+    "@discordjs/builders": "^1.10.0",
+    "@google/generative-ai": "^0.19.0",
+    "discord.js": "^14.17.2",
+    "dotenv": "^16.4.7",
     "moment": "^2.30.1",
-    "mongodb": "^6.8.1",
-    "mongoose": "^8.6.1",
-    "node": "23.0.0",
+    "mongodb": "^6.12.0",
+    "mongoose": "^8.9.3",
+    "node": "^23.5.0",
     "node-fetch": "^3.3.2",
-    "node.js": "^0.0.1-security",
-    "pkg.json": "^2.0.8",
-    "sequelize": "^6.37.4",
-    "sqlite": "^5.1.1",
-    "sqlite3": "^5.1.7"
+    "node.js": "^0.0.1-security"
   }
 }
