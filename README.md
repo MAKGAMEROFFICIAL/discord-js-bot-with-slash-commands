@@ -1,5 +1,5 @@
 # THIS REPO HAS BEEN ARCHIVED
-YOU WILL GET BETTER and more Organizes CODE WITH MORE FEATURES [HERE](https://github.com/MAKGAMEROFFICIAL/slasher-public)
+YOU WILL GET BETTER and more Organized CODE WITH MORE FEATURES [HERE](https://github.com/MAKGAMEROFFICIAL/slasher-public)
 
 
 
