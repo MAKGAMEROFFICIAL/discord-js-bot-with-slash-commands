@@ -1,4 +1,23 @@
-# Discord Multipurpose Bot with advanced slash commands and much more features
+# THIS REPO HAS BEEN ARCHIVED
+YOU WILL GET BETTER and more Organizes CODE WITH MORE FEATURES [HERE](https://github.com/MAKGAMEROFFICIAL/slasher-public)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Discord Multipurpose Bot with advanced slash commands and much more features
 ## **_Slasher_**
 A feature-rich Discord bot created by M.A.K GAMER to supercharge your server with fun, information, management, moderation, and utility commands. Enhance your Discord experience effortlessly!
 
